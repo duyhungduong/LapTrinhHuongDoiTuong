@@ -1,0 +1,45 @@
+package buoi4;
+
+import java.util.Scanner;
+
+import buoi2.Diem;
+
+public class DiemMau extends Diem{
+	private String mau;
+	public DiemMau() {
+		super();
+		mau=new String();
+	}
+	
+	public DiemMau(int x1, int y1, String m) {
+		super(x1, y1);
+		mau=new String(m);
+	}
+	
+	public DiemMau(DiemMau dm) {
+		super((DiemMau)dm);
+		mau=new String(dm.mau);
+	}
+	
+	public void nhap() {
+		Scanner sc = new Scanner(System.in);
+		super.nhapDiem();
+		System.out.print("\n Nhap mau cho diem: ");
+		mau=sc.nextLine();
+	}
+	
+	public void in() {
+		super.in();
+		System.out.print(", voi mau" + mau);
+	}
+	
+	public String toString() {
+		return super.toString() + ", voi mau" + mau;
+	}
+	
+	public void GanMau(String mau) {
+		this.mau=new String(mau);
+	}
+}
+
+

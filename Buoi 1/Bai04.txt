@@ -1,0 +1,28 @@
+package buoi1;
+
+import java.util.Scanner;
+
+public class Tong2soNguyen {
+	public int nhap() {
+		Scanner sc = new Scanner(System.in);
+		String s;
+		int n;
+		do {
+			System.out.print("\n Nhap mot so nguyen: ");
+			s = sc.nextLine();
+			try { n = Integer.parseInt(s);}
+			catch(NumberFormatException e) {
+				n = Integer.MAX_VALUE;
+				System.out.print("\n Nhap sai dinh dang, Nhap lai: ");
+			}
+		}while(n==Integer.MAX_VALUE);
+		return n;
+	}
+	public static void main(String[] args) {
+		Tong2soNguyen t = new Tong2soNguyen();
+		int a = t.nhap();
+		int b = t.nhap();
+		System.out.print("Tong = " +(a+b));
+	}
+}
+

@@ -1,0 +1,36 @@
+package buoi4;
+
+import java.util.Scanner;
+
+
+public class SDDVat {
+
+	public static void main(String[] args) {
+		
+		DVat dv;
+		Bo b=new Bo();
+		dv=b;
+		
+		DVat ds[];
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhap so dong vat: ");
+		int n=sc.nextInt();
+		ds=new DVat[n];
+		int c=0;
+		for(int i=0; i<n; i++) {
+			System.out.print("Ban nhap vao dong vat thu " + (i+1) + ":");
+			System.out.print("Dong vat nay la con Meo(0), Bo(1): ");
+			c=sc.nextInt();
+			if(c==0)
+				ds[i]=new Meo();
+			else
+				ds[i]=new Bo();
+			ds[i].nhap();
+		}
+
+		for(int i=0; i<n; i++) {
+			System.out.print("\n Con vat thu " + (i+1) + ":" + ds[i]);
+			ds[i].keu();
+		}
+	}
+}	

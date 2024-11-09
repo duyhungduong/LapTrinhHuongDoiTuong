@@ -1,0 +1,49 @@
+package buoi3;
+
+import java.util.Scanner;
+
+public class SDSinhVien{
+	public static void main(String [] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nhap so sinh vien: ");
+		int n = sc.nextInt();
+		
+		SinhVien ds[] = new SinhVien[n]; 
+		for(int i=0; i<n; i++) {
+			ds[i] = new SinhVien();
+			
+		}
+		System.out.println("Nhap danh sach sinh vien: ");
+		for(int i=0; i<n; i++) {
+			System.out.println("Nhap thong tin sinh vien thu" +(i+1) + ": ");
+			ds[i].nhap();
+		}
+		
+		System.out.println("In danh sach sinh vien: ");
+		for(int i=0; i<n; i++) {
+			System.out.println("Thong tin sinh vien thu" +(i+1) + ": ");
+			ds[i].in();
+		}
+
+		System.out.println("Nhap diem mon hoc cho sinh vien: ");
+		for(int i=0; i<n; i++) {
+			System.out.println("Nhap diem cho sinh vien thu" +(i+1) + ": ");
+			ds[i].nhap();
+		}
+		
+		
+		System.out.println("Danh sach sinh vien bi canh cao hoc vu: ");
+		for(int i=0; i<n; i++) {
+			if(ds[i].trungBinh()<1)
+				System.out.println("\n " + ds[i] + ds[i].trungBinh());
+		}
+		
+		System.out.println("Nhap mssv sinh vien can tim: ");
+		String mssv = sc.nextLine();
+		for(int i=0; i<n; i++) {
+			if(ds[i].layMssv().equals(mssv)) 
+				System.out.println("\n " + ds[i] + ds[i].trungBinh());
+		}
+		
+	}
+}

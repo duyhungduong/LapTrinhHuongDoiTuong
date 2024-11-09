@@ -1,0 +1,89 @@
+package buoi3;
+
+import java.util.Scanner;
+
+import buoi2.Date;
+
+public class SinhVien {
+	private String id, hoten;
+	private Date ngSinh;
+	private int n;
+	private String[] tenHP, diem;
+	
+	public SinhVien() {
+		id = new String();
+		hoten = new String();
+		ngSinh = new Date();
+		n=0;
+		tenHP = new String[55];
+		diem = new String[55];
+	}
+	public SinhVien(int m) {
+		id = new String();
+		hoten = new String();
+		ngSinh = new Date();
+		n = 0;
+		tenHP = new String[m];
+		diem = new String[m];
+		}
+	
+	public SinhVien(SinhVien s) {
+		id = new String(s.id);
+		hoten = new String(s.hoten);
+		ngSinh = new Date(s.ngSinh);
+		n = s.n;
+		tenHP = new String[s.tenHP.length];
+		diem = new String[s.diem.length];
+		for(int i=0; i<n; i++) {
+			tenHP[i] = new String (s.tenHP[i]);
+			diem[i] = new String (s.diem[i]);
+		}
+	}	
+	
+	public void nhap(){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("\nNhap ma so sinh vien:");
+		id = sc.nextLine();
+		System.out.print("\nNhap ho ten:");
+		hoten = sc.nextLine();
+		System.out.print("\nNhap ngay sinh:");
+		ngSinh.nhap();
+		System.out.print("Nhap so mon:");
+		n=sc.nextInt();
+		sc.nextLine();
+		for(int i=0; i<n; i++) {
+			System.out.print("\n Nhap mon hoc thu " + (i+1) + ":");
+			tenHP[i] = sc.nextLine();
+			System.out.print("\n Nhap diem hoc phan thu"+ (i+1) + ":");
+			diem[i]=sc.nextLine();
+		}
+	}
+	
+	public void in() {
+		System.out.print("\n Ma so sinh vien" + id);
+		System.out.print("\n Ma so sinh vien" + hoten);
+		System.out.print("\n Ngay sinh: ");
+		ngSinh.in();
+		System.out.print("\n So mon" + n);
+		for(int i=0; i<n; i++) {
+			System.out.print("\n Mon hoc thu" + (i+1)+ ":" + tenHP[i]);
+		}
+		int i = 0;
+		System.out.print("\nDiem hoc phan thu "+ (i+1) + ":" + diem[i]);
+	}
+	
+	public String toString() {
+		String s = " ";
+		s+=("\n Ma so sinh vien" + id);
+		s+=("\n Ma so sinh vien" + hoten);
+		s+=("\n Ngay sinh: " + ngSinh);
+		s+=("\n So mon" + n);
+		for(int i=0; i<n; i++) {
+			s+=("\n Mon hoc thu" + (i+1)+ ":" + tenHP[i]);
+		}
+		int i = 0;
+			return s+=("\nDiem hoc phan thu "+ (i+1) + ":" + diem[i]);
+	}
+		
+
+}

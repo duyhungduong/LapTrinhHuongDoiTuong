@@ -1,0 +1,59 @@
+package buoi4;
+
+import java.util.Scanner;
+
+public abstract class DVat {
+	private String giong, mau;
+	private float cnang;
+	
+	public abstract void keu();
+	
+	public DVat() {
+		giong=new String();
+		mau=new String();
+		cnang=0.0f;
+	}
+	
+	public DVat(String g, String m, float c) {
+		giong=new String(g);
+		mau=new String(m);
+		cnang=c;
+	}
+	
+	public DVat(DVat d) {
+		giong=new String(d.giong);
+		mau=new String(d.mau);
+		cnang=d.cnang;
+	}
+	
+	public void nhap() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nhap giong:");
+		giong=sc.nextLine();
+		System.out.print("Nhap mau:");
+		mau=sc.nextLine();
+		System.out.print("Nhap can nang:");
+		cnang=sc.nextFloat();
+	}
+	
+	public void in() {
+		System.out.print("[" + giong + "," + mau + "," + cnang + "]");
+	}
+	
+	public String toString() {
+		return("[" + giong + "," + mau + "," + cnang + "]");
+	}
+	
+	public String layGiong() {
+		return giong;
+	}
+	
+	public String layMau() {
+		return mau;
+	}
+	
+	public float layCNang() {
+		return cnang;
+	}
+	
+}

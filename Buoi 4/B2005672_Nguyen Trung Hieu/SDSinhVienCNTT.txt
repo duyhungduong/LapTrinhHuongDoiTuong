@@ -1,0 +1,50 @@
+package buoi4;
+
+import java.util.Scanner;
+
+import buoi3.SinhVien;
+
+public class SDSinhVienCNTT{
+
+	public static void main(String [] args) {
+		SinhVienCNTT ds[];
+		int n;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("\nNhap so sinh vien: ");
+		n = sc.nextInt();
+		
+		ds = new SinhVienCNTT[n];
+		
+		for(int i=0; i<n; i++) {
+			System.out.println("\nNhap thong tin sinh vien thu " + (i+1) + ": ");
+			ds[i] = new SinhVienCNTT(); 
+			ds[i].nhap();
+		}
+		
+		for(int i=0; i<n; i++) {
+			System.out.println("\nThong tin sinh vien thu " + (i+1) + ": " + ds[i]);
+		}
+		
+		String email;
+		
+		sc.nextLine();
+		
+		System.out.println("\nNhap dia chi email sinh vien can tim: ");
+		email = sc.nextLine();
+		boolean tim = false;
+		
+		for(int i=0; i<n; i++) {
+			if(ds[i].layEmail().compareToIgnoreCase(email) == 0) {  
+				System.out.print("\nTai khoan sinh vien vua tim thay: " + ds[i].layTKhoan() + ", ket qua hoc tap: "
+							+ ds[i].trungBinh());
+				tim = true;
+				break;
+				
+			}
+		}
+		if(tim==false) {
+			System.out.println("Khong tim thay sinh vien nay!");
+		}	
+	}
+}

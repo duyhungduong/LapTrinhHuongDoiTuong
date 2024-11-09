@@ -1,0 +1,56 @@
+package buoi4;
+
+import java.util.Scanner;
+
+import buoi2.Date;
+import buoi3.SinhVien;
+
+public class SinhVienCNTT extends SinhVien{
+	private String tkhoan, mkhau, email;
+	
+	public SinhVienCNTT() {
+		super();
+		tkhoan=new String();
+		mkhau=new String();
+		email=new String();
+	}
+	 public SinhVienCNTT(String m, String h, Date n, String t, String mk, String e) {
+		 super();
+		 tkhoan = new String(t);
+		 mkhau = new String(m);
+		 email = new String(e);
+	 }
+	 public SinhVienCNTT(SinhVienCNTT svcntt) {
+		 super(svcntt);
+		 tkhoan = new String(svcntt.tkhoan);
+		 mkhau = new String(svcntt.mkhau);
+		 email = new String(svcntt.email);
+	 }
+	 
+	 public void nhap() {
+		 super.nhap();
+		 Scanner sc = new Scanner(System.in);
+		 System.out.print("\nNhap so tao khoan: ");
+		 tkhoan = sc.nextLine();
+		 System.out.print("\nNhap mat khau: ");
+		 mkhau = sc.nextLine();
+		 System.out.print("\n Nhap email: ");
+		 email = sc.nextLine();
+	 }
+	 
+	 public String toString() {
+		 return super.toString() + "," + tkhoan + ", email" + email;
+	 }
+	 
+	 public void doiMatKhau(String newpass) {
+		 mkhau = new String(newpass);
+	 }
+	 
+	 public String layEmail() {
+		 return email;
+	 }
+	 public String layTKhoan() {
+		 return tkhoan;
+	 }
+
+}
